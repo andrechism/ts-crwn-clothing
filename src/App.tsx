@@ -34,14 +34,13 @@ class App extends Component<{}, AppState> {
 
         if (userRef) {
           userRef.onSnapshot(snapShot => {
-            console.log(snapShot)
 
             this.setState({
               currentUser: {
                 id: snapShot.id,
                 ...snapShot.data()
               }
-            }, () => console.log(this.state));
+            });
           });
           
         }
